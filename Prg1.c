@@ -1,18 +1,16 @@
-//1-Find the sum of digits and reverse of a number.
-#include<stdio.h>
+//1-Reverse a string using pointers
+#include <stdio.h>
+#include <string.h>
 int main()
 {
-	int n,s=0,r=0,d;
-	printf("Enter the number: ");
-	scanf("%d",&n);
-	while(n)
-	{
-		d=n%10;
-		s+=d;
-		r=r*10+d;
-		n/=10;
-	}
-	printf("Sumof digits = %d",s);
-	printf("\nReverse of the number = %d",r);
-	return 0;
+	char str[50],*ptr;
+	int len,i;
+	printf("Enter a String: ");
+	gets(str);
+	ptr=str;
+	len=strlen(str);
+	printf("The Reverse of the String is:");
+	for(i=len;i>=0;i--)
+		printf("%c",*(ptr+i));
 }
+
