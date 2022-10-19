@@ -1,17 +1,26 @@
-//2-Find first n Fibonacci numbers
-#include<stdio.h>    
-int main()    
-{    
-	int n1=0,n2=1,n3,i,number;    
-	printf("Enter the number of elements:");    
-	scanf("%d",&number);    
-	printf("\n%d %d",n1,n2);  
-	for(i=2;i<number;++i)
-	{    
-		n3=n1+n2;    
-		printf(" %d",n3);    
-		n1=n2;    
-		n2=n3;    
-	}  
-	return 0;  
-}    
+//2- Implement Pattern matching algorithm
+#include <stdio.h> 
+#include <string.h> 
+int main() 
+{ 
+    char text[20],pat[20];
+    int a,b,i,j,flag=0;
+    printf("Enter the string : ");
+    gets(text);
+    printf("Enter the pattern to find : ");
+    gets(pat);
+    a = strlen(pat); 
+    b = strlen(text);
+    for (i = 0; i <= b - a; i++) {
+        for (j = 0; j < a; j++)
+            if (text[i + j] != pat[j])
+                break;
+        if (j == a){
+            printf("Pattern found at position %d \n", i+1);
+            flag=1;
+		} 
+    } 
+    if(flag==0)
+		printf("Pattern not found!");
+    return 0;
+}
